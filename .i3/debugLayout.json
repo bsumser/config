@@ -1,0 +1,91 @@
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 672,
+       "width": 1120,
+       "x": 0,
+       "y": 0
+    },
+    "name": "vim main.c",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^URxvt$",
+        "instance": "^editor$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 672,
+               "width": 1120,
+               "x": 0,
+               "y": 0
+            },
+            "name": "valgrind",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+        		" instance": "^valgrind$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 672,
+               "width": 1120,
+               "x": 0,
+               "y": 0
+            },
+            "name": "gdb",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+        		" instance": "^gdb$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 672,
+               "width": 1120,
+               "x": 0,
+               "y": 0
+            },
+            "name": "git",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+        		" instance": "^git$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
