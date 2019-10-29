@@ -31,7 +31,7 @@ bindsym $mod+Return exec terminal
 bindsym $mod+t exec urxvt -name floating_term
 
 # start floating ranger
-bindsym $mod+r exec urxvt -hold -e ranger -name floating_term
+bindsym $mod+r exec ranger
 
 # kill focused window
 bindsym $mod+q kill

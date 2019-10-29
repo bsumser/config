@@ -24,6 +24,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'lervag/vimtex'
+Plug 'vim-airline/vim-airline-themes'
+
+" plugin for git info
+Plug 'tpope/vim-fugitive'
 
 " vertical line dashes showing text indentation
 Plug 'Yggdroot/indentLine'
@@ -35,6 +39,7 @@ set background=dark
 
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
+let g:airline_section_b = '%{FugitiveStatusline()}'
 
 if &term =~ '256color'
 	    set t_ut=
