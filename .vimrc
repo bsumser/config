@@ -37,9 +37,11 @@ call plug#end()
 set background=dark
 "set background=light
 
+" airline stuff
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
 let g:airline_section_b = '%{FugitiveStatusline()}'
+let g:airline_powerline_fonts = 1
 
 if &term =~ '256color'
 	    set t_ut=
