@@ -30,9 +30,6 @@ floating_modifier $mod
 bindsym $mod+Return exec terminal
 bindsym $mod+t exec urxvt -name floating_term
 
-# start floating ranger
-bindsym $mod+r exec ranger
-
 # kill focused window
 bindsym $mod+q kill
 
@@ -104,12 +101,12 @@ bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
+#bindsym $mod+b workspace back_and_forth
 #bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+Shift+b split h;exec notify-send 'tile horizontally'
-bindsym $mod+Shift+v split v;exec notify-send 'tile vertically'
+bindsym $mod+b split h;exec notify-send 'tile horizontally'
+bindsym $mod+v split v;exec notify-send 'tile vertically'
 #bindsym $mod+Shift+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -251,7 +248,7 @@ mode "$mode_system" {
 }
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+Shift+r mode "resize"
+bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the window’s width.
@@ -288,7 +285,7 @@ exec --no-startup-id clipit
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia 
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
