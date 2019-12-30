@@ -1,6 +1,8 @@
 set number
 set tabstop=4
+set shiftwidth=4
 set noswapfile
+set foldmethod=manual
 
 set listchars=tab:\|\  
 set list
@@ -12,14 +14,19 @@ nmap <F6> :NERDTreeToggle<CR>
 
 imap jk <Esc>
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 call plug#begin('~/.vim/plugged')
 
 " vim theme plugin
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdtree'
-Plug 'mechatroner/rainbow_csv'
+Plug 'morhetz/gruvbox' " gruvbox colorscheme
+Plug 'scrooloose/nerdtree' " filesystem tree in vim
+Plug 'mechatroner/rainbow_csv' " color for csv files
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
