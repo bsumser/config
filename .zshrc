@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/bsumser/.oh-my-zsh"
@@ -7,6 +7,8 @@
 # path for go language
   export GOPATH=$HOME/go/
   export PATH=$GOPATH/bin:$PATH
+  
+  export PATH=$PATH:~/scripts
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -100,3 +102,4 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 alias config='/usr/bin/git --git-dir=/home/bsumser/.cfg/ --work-tree=/home/bsumser'
+alias zet='~/scripts/zet.sh'
