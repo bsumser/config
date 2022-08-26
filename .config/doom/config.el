@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Brett Sumser"
+      user-mail-address "bsumser@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -42,6 +42,28 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 (setq org-roam-directory "~/org/")
+(setq org-roam-db-location "~/org/org-roam.db")
+
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/todo.org")
+         "* TODO %?\n  %i\n  %a")
+      ("r" "Project todo" entry (file+headline notes.org "Tasks")
+        "* TODO %? :%(gkh/project-current-name):" :prepend t)))
+
+(defun gkh/project-current-name ()
+"Get the name of the current project by returning the project name for DIR."
+(if (string-match "/\\([^/]+\\)/\\'" (project-root (project-current t)))
+    (match-string 1 (project-root (project-current t)))
+  (project-root (project-current t))))
+
+
+(custom-set-variables
+'(shell-pop-set-internal-mode "ansi-term")
+'(shell-pop-set-internal-mode-shell "/bin/zsh")
+'(shell-pop-set-window-height 60) ;the number for the percentage of the selected window. if 100, shell-pop use the whole of selected window, not spliting.
+'(shell-pop-set-window-position "bottom") ;shell-pop-up position. You can choose "top" or "bottom".
+'(global-set-key [f8] 'shell-pop))
 
 (use-package! websocket
   :after org-roam-ui)

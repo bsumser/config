@@ -114,6 +114,7 @@
 
        :lang
        (python +lsp)
+       (python3 +lsp)
        (cc +lsp)
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
