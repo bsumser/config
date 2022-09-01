@@ -58,6 +58,35 @@
   (project-root (project-current t))))
 
 
+
+(require 'ox-publish)
+(setq org-publish-project-alist
+      '(
+                ("org-notes"
+                 :base-directory "~/org/"
+                 :base-extension "org"
+                 :publishing-directory "~/webpage/public/pages/notes"
+                 :recursive t
+                 :publishing-function org-html-publish-to-html
+                 :headline-levels 4             ; Just the default for this project.
+                 :auto-preamble t
+                 )
+                ("org-static"
+                 :base-directory "~/org/"
+                 :base-extension "png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+                 :publishing-directory "~/webpage/public/pages/notes"
+                 :recursive t
+                 :publishing-function org-publish-attachment
+                 )
+                ("org" :components ("org-notes" "org-static"))
+      ))
+
+;; Customize the HTML output
+(setq org-html-validation-link nil            ;; Don't show validation link
+      org-html-head-include-scripts nil       ;; Use our own scripts
+      org-html-head-include-default-style nil ;; Use our own styles
+      org-html-head "<link rel=\"stylesheet\" href=\"styles.css\" />")
+
 (custom-set-variables
 '(shell-pop-set-internal-mode "ansi-term")
 '(shell-pop-set-internal-mode-shell "/bin/zsh")
