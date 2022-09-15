@@ -51,13 +51,9 @@
       ("r" "Project todo" entry (file+headline notes.org "Tasks")
         "* TODO %? :%(gkh/project-current-name):" :prepend t)))
 
-(defun gkh/project-current-name ()
-"Get the name of the current project by returning the project name for DIR."
-(if (string-match "/\\([^/]+\\)/\\'" (project-root (project-current t)))
-    (match-string 1 (project-root (project-current t)))
-  (project-root (project-current t))))
-
-
+;; Debug C++ code
+(setq dap-auto-configure-mode t)
+'(requires 'dap-cpptools)
 
 (require 'ox-publish)
 (setq org-publish-project-alist
