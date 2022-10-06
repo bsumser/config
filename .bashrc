@@ -3,10 +3,6 @@
 #
 
 
-export EDITOR=vim
-
-
-
 #-----------------------------------------DEFAULT STUFF-----------------------------------------#
 
 [[ $- != *i* ]] && return
@@ -143,3 +139,6 @@ ex ()
   fi
 }
 alias config='/usr/bin/git --git-dir=/home/bsumser/.cfg/ --work-tree=/home/bsumser'
+
+export EDITOR=vim
+export PATH="~/.config/emacs/bin:$PATH"
