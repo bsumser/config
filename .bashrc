@@ -142,3 +142,4 @@ alias config='/usr/bin/git --git-dir=/home/bsumser/.cfg/ --work-tree=/home/bsums
 
 export EDITOR=vim
 export PATH="~/.config/emacs/bin:$PATH"
+export PATH=$PATH:/home/bsumser/.spicetify

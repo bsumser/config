@@ -55,6 +55,14 @@
 (setq dap-auto-configure-mode t)
 '(requires 'dap-cpptools)
 
+;; Make new frames instead of new windows
+;; http://techtrickery.com/tearing-out-the-emacs-window-manager.html
+    (set 'pop-up-frames 'graphic-only)
+
+;; kill frames when a buffer is buried, makes most things play nice with
+;; frames
+(set 'frame-auto-hide-function 'delete-frame)
+
 (require 'ox-publish)
 (setq org-publish-project-alist
       '(
@@ -85,7 +93,7 @@
 
 (custom-set-variables
 '(shell-pop-set-internal-mode "ansi-term")
-'(shell-pop-set-internal-mode-shell "/bin/zsh")
+'(shell-pop-set-internal-mode-shell "/bin/bash")
 '(shell-pop-set-window-height 60) ;the number for the percentage of the selected window. if 100, shell-pop use the whole of selected window, not spliting.
 '(shell-pop-set-window-position "bottom") ;shell-pop-up position. You can choose "top" or "bottom".
 '(global-set-key [f8] 'shell-pop))
