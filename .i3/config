@@ -28,7 +28,13 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec terminal
-bindsym $mod+t exec terminal -name floating_term
+bindsym $mod+g exec terminal -name floating_term
+
+# start up btop
+bindsym $mod+b exec --no-startup-id urxvt -hold -e btop
+
+# run emacs client
+bindsym $mod+e exec --no-startup-id emacsclient -a "" -c
 
 # kill focused window
 bindsym $mod+q kill
@@ -36,7 +42,7 @@ bindsym $mod+q kill
 # start program launcher
 # bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+d exec --no-startup-id rofi -show run
-bindsym $mod+e exec --no-startup-id rofi -show find -modi find:~/.config/rofi/finder.sh
+#bindsym $mod+e exec --no-startup-id rofi -show find -modi find:~/.config/rofi/finder.sh
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -66,10 +72,10 @@ bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
 # bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"`````````````````
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s```````````````
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -107,16 +113,16 @@ workspace_auto_back_and_forth yes
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+b split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+#bindsym $mod+b split h;exec notify-send 'tile horizontally'
+bindsym $mod+v split toggle;exec notify-send 'split changed'
 #bindsym $mod+Shift+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking;exec notify-send 'stacking'
-bindsym $mod+w layout tabbed;exec notify-send 'tabbed'
+bindsym $mod+s layout stacking;exec notify-send 'Stacked'
+bindsym $mod+w layout tabbed;exec notify-send 'Tabbed'
 
 # bindsym $mod+e layout toggle split
 
